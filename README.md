@@ -5,6 +5,11 @@
 * you can use js for both your front end and your back end code
 * you can also use jquery in the front end and back end
 * it has native support for evented programming - steams,sockets
+* --save will add your modules to your package json file
 
-	
+###helpful npm commands
 
+* npm install -g express (installs Express as a global module)	
+* So now I can type express and the name of the project I want to create
+* With Node global modules are almost always used to install command line tools rather than global copies of packages
+* The idea is to le each project define their own required versions of modules and have them downloaded separately
