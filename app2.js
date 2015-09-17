@@ -1,7 +1,27 @@
 var avion = require('./avion');
 
-avion.setNumber(747);
-avion.setOrigin('Miami');
-avion.setDestination("San Francisco");
+var pdxlax = {
+	number: 890,
+	origin: 'PDX',
+	destination: 'LAX'
+};
 
-console.log(avion.getInfo());
+var pl = avion(pdxlax);
+
+pl.triggerDepart();
+
+console.log(pl.getInformation());
+
+
+var ausdca = {
+	number: 388,
+	origin: 'AUS',
+	destination: 'DCA'
+};
+
+
+var ad = avion(ausdca);
+
+console.log(ad.getInformation());
+
+console.log(pl.getInformation());
