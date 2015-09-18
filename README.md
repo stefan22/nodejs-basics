@@ -23,6 +23,7 @@
 * The idea is to le each project define their own required versions of modules and have them downloaded separately
 * npm prune removes any modules that your project isn't using - not in your json packgage file
 * npm update whenenver you wanna get/add dependencies to your project - updates all modules in your project
+* exit node interface ctrl + d or ctrl c twice
 
 ###Express
 * popular node framework for creating server applications
