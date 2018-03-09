@@ -1,10 +1,11 @@
 {
   "name": "nodexpress",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "nodexpress",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon ./index.js --exec babel-node -e js"
+    "start": "npm test && nodemon ./app.js --exec babel-node -e js",
+    "test": "open http://localhost:3001"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,7 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongoose": "^5.0.8"
+    "mongoose": "^5.0.9"
   },
   "homepage": "https://github.com/stefan22/nodexpress#readme",
   "devDependencies": {
