@@ -13,7 +13,7 @@ app.set('port', nconf.get('http:port'));
 var server = http.createServer(app);
 
 //listening on port
-server.listen(app.get('port'));
+server.listen(nconf.get('http:port'));
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -27,7 +27,7 @@ function onError(error) {
 
   var bind = typeof port === 'string'
     ? 'Pipe ' + port
-    : 'Port ' + port;
+    : 'Port ' + nconf.get('http:port');
 
   //handle specific listen errors 
   switch (error.code) {

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npm test && DEBUG=xpressconf:* node ./bin/www",
-    "test": "open http://localhost:3005"
+    "test": "open http://localhost:3007"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -15,8 +15,9 @@
     "jade": "^1.11.0",
     "jstransformer": "^1.0.0",
     "morgan": "~1.9.0",
-    "nconfig": "0.0.6",
+    "nconf": "^0.10.0",
     "pug": "^2.0.1",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "winston": "^2.4.0"
   }
 }

@@ -5,11 +5,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nconf = require('nconf');
+var winston = require('winston');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+//winston logger
+winston.log('info','init app.js winston logs');
+
+
 var app = express();
+
+
 
 //nconf argv
 nconf.argv({
@@ -21,15 +28,26 @@ nconf.argv({
 
 nconf.env('__');
 
-//nconf defaults
 nconf.defaults({
-  'http': {
-    'port': 3005
+  "http": {
+    "port":3007
+  },
+  "logger": {
+    "filelevel":"error"
   }
 });
 
 //nconf config
 nconf.file('config.json');
+
+//winstontransports | error & above log to a file/else to console
+winston.add(winston.transports.File, {filename: "error.log", level: nconf.get("logger:filelevel")});
+
+
+//test winston
+winston.info('nconf','endof nconf files');
+winston.info("HTTP Config: ", nconf.get("http"));
+winston.info('app.js: -> endof console messages', '\n-----------------------------\n');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
