@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nconf = require('nconf');
 var winston = require('winston');
+var nunjucks = require('nunjucks');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -17,6 +18,13 @@ winston.log('info','init app.js winston logs');
 var app = express();
 
 
+//nunjucks
+nunjucks.configure('views', {
+  //auto escape,html open
+  autoescape: true,
+  //pass app instance to express
+  express: app
+});
 
 //nconf argv
 nconf.argv({
@@ -51,7 +59,8 @@ winston.info('app.js: -> endof console messages', '\n---------------------------
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//express to render nunjucks html
+app.set('view engine', 'html');
 
 
 app.use(logger('dev'));

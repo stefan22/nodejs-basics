@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <h1>SL® says: Page {{message}}</h1>
+  <h2>Error code: {{error.status}}</h2>
+  <pre>{{error.stack}}</pre>
+
+{% endblock %}
