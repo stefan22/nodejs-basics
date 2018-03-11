@@ -1,59 +1,25 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
-
+//mod dependencies
 var app = require('../app');
 var debug = require('debug')('xpressconf:server');
 var http = require('http');
-var nconf = require('nconfig');
+var nconf = require('nconf');
 
-/**
- * Get port from environment and store in Express.
- * Updated port w/nconf
- */
-var port = normalizePort(process.env.PORT || "3000");
-app.set('port', port);
+//nconf port
+app.set('port', nconf.get('http:port'));
 
-/**
- * Create HTTP server.
- */
-
+//server
 var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(app.get("port"));
+//listening on port
+server.listen(app.get('port'));
 server.on('error', onError);
 server.on('listening', onListening);
 
-/**
- * Normalize a port into a number, string, or false.
- */
 
-function normalizePort(val) {
-  var port = parseInt(val, 10);
 
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
-
-/**
- * Event listener for HTTP server "error" event.
- */
-
+//Event listener for HTTP server "error" event.
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -63,7 +29,7 @@ function onError(error) {
     ? 'Pipe ' + port
     : 'Port ' + port;
 
-  // handle specific listen errors with friendly messages
+  //handle specific listen errors 
   switch (error.code) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');
@@ -78,14 +44,13 @@ function onError(error) {
   }
 }
 
-/**
- * Event listener for HTTP server "listening" event.
- */
 
+//Event listener for HTTP server "listening" event.
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('®stefano...nodexpress server listening on ' + bind);
+  debug('®stefano...nodexpress server listening on ' + bind + '\n-------------------');
 }
+//theend

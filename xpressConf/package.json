@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "npm test && node ./bin/www",
-    "test": "open http://localhost:3000"
+    "start": "npm test && DEBUG=xpressconf:* node ./bin/www",
+    "test": "open http://localhost:3005"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
