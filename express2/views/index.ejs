@@ -1,0 +1,32 @@
+    <% include partials/header  %>
+
+   
+   
+    <div class="wrapper">
+        <header>
+            <h1>Customers</h1>
+        </header>
+        <div class="main">
+        <ul>    
+        <%   users.forEach(function(usr) {  %>
+            
+            <li><label>First </label> <%= usr.first %></li>
+            <li><label>Last: </label> <%= usr.last %></li>
+            <li><label>Email: </label> <%= usr.email() %></li>
+
+        <%   })     %>
+        </ul>   
+       
+       
+       
+       
+       
+       
+       
+       
+        </div>
+        <!-- endof main -->
+    </div> 
+    <!-- endof wrapper -->
+    
+<% include partials/footer %>
