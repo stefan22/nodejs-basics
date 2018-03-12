@@ -46,8 +46,33 @@ var users = [
 
 app.get('/', function(req,res) {
     res.render('index', {
-        pageTitle: 'Customers',
-        users: users
+        pageTitle: 'Home page',
+        users: users,
+        image:'homepage.png',
+        width:640,
+        height:533
+    });  
+
+});
+
+app.get('/all_customers', function(req,res) {
+    res.render('index', {
+        pageTitle: 'All Customers page',
+        users: users,
+        image:'allcustomers.jpg',
+        width:1024,
+        height:534
+    });  
+
+});
+
+app.get('/new_customer', function(req,res) {
+    res.render('index', {
+        pageTitle: 'New Customer page',
+        users: users,
+        image:'newcustomer.jpg',
+        width:699,
+        height:400
     });  
 
 });
@@ -61,6 +86,6 @@ app.get('/', function(req,res) {
 
 
 //listening
-app.listen(3022, function(req,res) {
+app.listen(3022, function() {
     console.log(`server listening on port ${PORT}`);
 });
