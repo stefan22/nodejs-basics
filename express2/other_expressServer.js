@@ -21,6 +21,8 @@
     body-parser parsing json
     (require/use and call next())
                  
+other:
+postman,nodemon
 
 */
 
