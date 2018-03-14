@@ -20,6 +20,8 @@
     morgan for logs
     body-parser parsing json
     (require/use and call next())
+    
+missing routes: atm i'm sending 200 res regardless of url    
                  
 other:
 postman,nodemon
