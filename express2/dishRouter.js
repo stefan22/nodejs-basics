@@ -3,7 +3,7 @@
 
   Process:
   removed all calls to /dishes from app.js and chained them all here together. A lot easier/faster.
-    + place them on a new routes folder and using endpoint as filename (dishRouter.js)
+    + place them on a new routes folder and using endpoint as new filename (dishRouter.js)
     + then set file public w/exports, and require the file from app.js lastly..
     + added this to app.js:
       app.use('/dishes, diskRouter)
