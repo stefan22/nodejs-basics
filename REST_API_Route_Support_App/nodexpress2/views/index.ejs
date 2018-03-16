@@ -1,0 +1,52 @@
+    <% include partials/header  %>
+
+   
+   
+    <div class="wrapper">
+        <header>
+            <h1><%= pageTitle %></h1>
+        </header>
+        <div class="main">
+                <nav>
+                        <ul>
+                            <li>
+                                <a href="./">home</a>
+                            </li>
+                            <li>
+                                <a href="./all_customers">all_customers</a>
+                            </li>
+                            <li>
+                                <a href="./new_customer">new_customer</a>
+                            </li>
+                        </ul>
+                </nav>
+        <div class="pimg">
+            <figure>
+                <img src="/images/<%= image %>" alt="<%= image %> page" width="<%=width%>" height="<%=height%>" />
+            </figure>
+        </div>        
+        
+
+        <ul>    
+        <%   users.forEach(function(usr) {  %>
+            
+            <li><label>First </label> <%= usr.first %></li>
+            <li><label>Last: </label> <%= usr.last %></li>
+            <li><label>Email: </label> <%= usr.email() %></li>
+
+        <%   })     %>
+        </ul>   
+       
+       
+       
+       
+       
+       
+       
+       
+        </div>
+        <!-- endof main -->
+    </div> 
+    <!-- endof wrapper -->
+    
+<% include partials/footer %>

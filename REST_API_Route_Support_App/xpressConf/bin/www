@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+
+//mod dependencies
+var app = require('../app');
+var debug = require('debug')('xpressconf:server');
+var http = require('http');
+var nconf = require('nconf');
+
+//nconf port
+app.set('port', nconf.get('http:port'));
+
+//server
+var server = http.createServer(app);
+
+//listening on port
+server.listen(nconf.get('http:port'));
+server.on('error', onError);
+server.on('listening', onListening);
+
+
+
+//Event listener for HTTP server "error" event.
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + nconf.get('http:port');
+
+  //handle specific listen errors 
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+
+//Event listener for HTTP server "listening" event.
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('®stefano...nodexpress server listening on ' + bind + '\n-------------------');
+}
+//theend
