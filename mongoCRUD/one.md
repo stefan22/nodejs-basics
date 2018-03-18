@@ -8,7 +8,7 @@
 	+ copy to /usr/local/bin
 
 > homebrew chooses a different path automatically -at least it did to me 
-> (in which case you'll have to include path in bash file and make sure it works)
+> (in which case you'll have to include path in bash file and make sure it works)         
 > downloading file first and installing mongo from terminal, i think is better.   
 > mongo community version -free  &nbsp; :scissors:
 
