@@ -1,4 +1,4 @@
-## <kbd>mongo shell</kbd>
+## <kbd>mongo shell</kbd> &nbsp; :coffee:
 
 - by default you're connected to the `test` db
 
@@ -20,7 +20,7 @@
 - show collections (it's similar to doing tables on sql databases)
 
 
-## import data into database
+## import data into database  &nbsp; :blue_book:
 
 - to find help, go to your terminal and type: (not from shell -regular terminal)
 	
@@ -39,7 +39,7 @@
 
 
 
-## shell operations  (CRUD)
+## shell operations  (CRUD)  &nbsp; :skull:
 
  - finding wine tours in the database
 
@@ -102,11 +102,11 @@
 > command + k clears the mongo shell
 
 ```
-		var collections = db.getCollectionNames();
-		for(var i = 0; i< collections.length; i++) {    
-		   print('Collection: ' + collections[i]); // print the name of each collection
-		   db.getCollection(collections[i]).find().forEach(printjson); //and then print     the json of each of its elements
-		}
+     var collections = db.getCollectionNames();
+     for(var i = 0; i< collections.length; i++) {    
+        print('Collection: ' + collections[i]);                      // print the name of each collection
+        db.getCollection(collections[i]).find().forEach(printjson);  //and then print the json of each of its elements
+     }
 
 ```
 
