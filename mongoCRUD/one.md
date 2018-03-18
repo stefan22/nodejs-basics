@@ -16,27 +16,27 @@
 ```
 ex: (is copying all files inside of bin folder in mongo downloaded file)
 
-1- place files into usr/loca/bin folder	
+<kbd>1-<kbd> place files into usr/loca/bin folder	
 
 > sudo cp * /usr/local/bin
 
-2- create mongo db directory (data/db is default path needed to create)
+<kbd>2-</kbd> create mongo db directory (data/db is default path needed to create)
 
 > sudo mkdir -p data/db
 
-3- open up permissions so that a reg user can access dir
+<kbd>3-</kbd> open up permissions so that a reg user can access dir
 
 > sudo chmod 777 /data
 > sudo chmod 777 /data/db
 
 « ……………………………………… done ∆
 
-4- start server ………… ≈∑œ©•˙©¡∞∞«œ
+<kbd>4-</kbd> start server ………… ≈∑œ©•˙©¡∞∞«œ
 
 > mongod
 
 
-5- make sure it works by inserting data in database
+<kbd>5-</kbd> make sure it works by inserting data in database
 
    * open another terminal tab
 
