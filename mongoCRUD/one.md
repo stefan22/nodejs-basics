@@ -1,4 +1,4 @@
-# <kbd>mongo install</kbd>
+# <kbd>mongo install</kbd>   &nbsp; :surfer:
 
 - download mongo binary tar file
 - extract file
@@ -10,7 +10,7 @@
 > homebrew chooses a different path automatically -at least it did to me 
 > (in which case you'll have to include path in bash file and make sure it works)
 > downloading file first and installing mongo from terminal, i think is better.   
-> mongo community version -free
+> mongo community version -free  &nbsp; :scissors:
 
 
 ```
@@ -48,7 +48,7 @@
 ```
 
 
-## mongo document handling
+## mongo document handling  &nbsp; :clipboard:
 
 ```
 	//request for `all` documents containing `John` as the `first name`
