@@ -1,34 +1,20 @@
-<%- include('partials/header')  -%>
-
-  	<div class="container">
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="./about.html">About</a>
-            </li>
-            <li>
-              <a href="./dishes">Dishes</a>
-            </li>
-            <li>
-              <a href="./locations">Locations</a>
-            </li>
-            <li>
-              <a href="./promotions">Promos</a>
-            </li>
-        </ul>
-        </nav>
-  	  </header>
-
-  	  <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
-  	
-  	</div>
-    <!-- endof container -->
+<!DOCTYPE html>
+<html>
+  <head><% include links/headlinks.ejs %></head>
+  <body>
+    <% include partials/header.ejs %>
     
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+        <% include content/maincontent.ejs %>
+        </div>
+      </div>
+    </div><!-- container -->
+   <% include partials/footer.ejs%>
+   <% include links/footscripts.ejs %>
+  </body>
+</html>
 
 
 
@@ -36,5 +22,3 @@
 
 
 
-
-<%- include('partials/footer') -%>
