@@ -38,8 +38,8 @@
   A collection is a set of documents.     
   And a `document` is a `JSON document` (with some additional features)         
   	ex:   
-  	  + information about the type of a field value. 
-  	  + primitive types like UTC date time and ObjectId.  
+  	+   information about the type of a field value. 
+  	+   primitive types like UTC date time and ObjectId.  
 
 
 - Mongo stores the documents in a `BSON` format (binary JSON)
@@ -69,11 +69,11 @@
 
 ```
 	ex: ObjectId (in mongoDB)
-		______________________________________________________________
-		|		       |                   |           |              |
-		|	Timestamp  |   Machine ID      |  Proc.    |   Increment  |
-		|	(4-bytes)  |	(3-bytes)      |   ID      |   (3-bytes)  |
-		|              |                   | (2-bytes) |              | 
+	______________________________________________________________
+	|	       |                   |           |              |
+	|   Timestamp  |   Machine ID      |  Proc.    |   Increment  |
+	|   (4-bytes)  |    (3-bytes)      |   ID      |   (3-bytes)  |
+	|              |                   | (2-bytes) |              | 
         |______________|___________________|___________|______________| 
 
 
