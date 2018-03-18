@@ -14,35 +14,35 @@
 
 
 ```
-	ex: (is copying all files inside of bin folder in mongo downloaded file)
+ex: (is copying all files inside of bin folder in mongo downloaded file)
 
-	1- place files into usr/loca/bin folder	
+1- place files into usr/loca/bin folder	
 
-	> sudo cp * /usr/local/bin
+> sudo cp * /usr/local/bin
 
-	2- create mongo db directory (data/db is default path needed to create)
+2- create mongo db directory (data/db is default path needed to create)
 
-	> sudo mkdir -p data/db
+> sudo mkdir -p data/db
 
-	3- open up permissions so that a reg user can access dir
+3- open up permissions so that a reg user can access dir
 
-	> sudo chmod 777 /data
-	> sudo chmod 777 /data/db
+> sudo chmod 777 /data
+> sudo chmod 777 /data/db
 
-	« ……………………………………… done ∆
+« ……………………………………… done ∆
 
-	4- start server ………… ≈∑œ©•˙©¡∞∞«œ
+4- start server ………… ≈∑œ©•˙©¡∞∞«œ
 
-	> mongod
+> mongod
 
 
-	5- make sure it works by inserting data in database
+5- make sure it works by inserting data in database
 
-		* open another terminal tab
+   * open another terminal tab
 
-		> type: mongo to access mongo database terminal (shell)
+   > type: mongo to access mongo database terminal (shell)
 
-		> type: db.users.insert({"name":"pizza"})
+   > type: db.users.insert({"name":"pizza"})
 
 
 ```
@@ -51,29 +51,29 @@
 ## mongo document handling  &nbsp; :clipboard:
 
 ```
-	//request for `all` documents containing `John` as the `first name`
+//request for `all` documents containing `John` as the `first name`
 
-	>  db.users.find({first_name: "John"})
-
-
-	//if `no match`,then `nothing` get `returned` no errors field
-
-	>  db.users.find({address: { $exists: true }})
+>  db.users.find({first_name: "John"})
 
 
-	// `remove` John from users table
+//if `no match`,then `nothing` get `returned` no errors field
 
-	> db.users.remove({first_name: "John"})
-
-
-	// update (overkill)
-
-	> db.users.update({first_name: "John"})
+>  db.users.find({address: { $exists: true }})
 
 
-	//get phone number for everyone in db
+// `remove` John from users table
 
-	> db.users.find({},{"phone":1})
+> db.users.remove({first_name: "John"})
+
+
+// update (overkill)
+
+> db.users.update({first_name: "John"})
+
+
+//get phone number for everyone in db
+
+> db.users.find({},{"phone":1})
 
 
 
