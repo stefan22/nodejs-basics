@@ -1,4 +1,4 @@
-### <kbd>.mongorc.js</kbd>
+### <kbd>.mongorc.js</kbd>   &nbsp;  :card_index:  
 
 - is a configuration file for the mongo shell.
 - i created one within <user> home directory
@@ -6,7 +6,7 @@
 - add functions that you can call from mongod termimal
 
 
-### indexing
+### indexing  &nbsp; :construction:
 
 - it makes file loading faster, and speeds up lookup.
 - when making indexes take your queries into consideration
@@ -15,7 +15,7 @@
 
 > to examine your queries, you can use `explain(executionStats)`  
 
-- how-to: first run your queries on the shell
+- how-to: first run your queries on the shell  &nbsp; :pill:
 
 ```
 	db.caltrdb.find({"tourPackage":"Chinatown"}).explain("executionStats")
@@ -34,7 +34,7 @@
 
 ```
 
-## multiple indexing
+## multiple indexing  &nbsp;  :ticket:
 
 ```
 	ex: `combining` tours that are less than 500 pounds and less than 3 days long
@@ -55,3 +55,6 @@
 	//executionStats examined only 10 docs (those returned only)
 
 ```
+
+
+:100:
