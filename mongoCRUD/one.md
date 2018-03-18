@@ -15,19 +15,19 @@
 
 ex: (is copying all files inside of bin folder in mongo downloaded file)
 
-<kbd>1-</kbd> place files into usr/loca/bin folder	
+<kbd>1-</kbd> place files into usr/loca/bin folder &nbsp; :pill:	
 
 ```
 > sudo cp * /usr/local/bin
 ```
 
-<kbd>2-</kbd> create mongo db directory (data/db is default path needed to create)
+<kbd>2-</kbd> create mongo db directory (data/db is default path needed to create)  &nbsp; :pill:
 
 ```
 > sudo mkdir -p data/db
 ```
 
-<kbd>3-</kbd> open up permissions so that a reg user can access dir
+<kbd>3-</kbd> open up permissions so that a reg user can access dir  &nbsp; :pill: 
 
 ```
 > sudo chmod 777 /data
@@ -42,7 +42,7 @@ ex: (is copying all files inside of bin folder in mongo downloaded file)
 > mongod
 ```
 
-<kbd>5-</kbd> make sure it works by inserting data in database
+<kbd>5-</kbd> make sure it works by inserting data in database   &nbsp; :pill:
 
 * open another terminal tab
 
@@ -57,35 +57,35 @@ ex: (is copying all files inside of bin folder in mongo downloaded file)
 ## mongo document handling  &nbsp; :clipboard:
 
 
-* request for `all` documents containing `John` as the `first name`
+* request for `all` documents containing `John` as the `first name`   &nbsp; :pill: 
 
 ```
 >  db.users.find({first_name: "John"})
 
 ```
 
-* if `no match`,then `nothing` get `returned` no errors field
+* if `no match`,then `nothing` get `returned` no errors field   &nbsp; :pill: 
 
 ```
 >  db.users.find({address: { $exists: true }})
 
 ```
 
-*  `remove` John from users table
+*  `remove` John from users table   &nbsp; :pill:
 
 ```
 > db.users.remove({first_name: "John"})
 
 ```
 
-* update (overkill)
+* update (overkill)  &nbsp; :pill:
 
 ```
 > db.users.update({first_name: "John"})
 
 ```
 
-* get phone number for everyone in db
+* get phone number for everyone in db   &nbsp; :pill:
 
 ```
 > db.users.find({},{"phone":1})
