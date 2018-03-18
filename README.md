@@ -1,13 +1,12 @@
 # nodexpress
 
 nodexpress application w/rest api route support
-> exclude: REST_API_Route_Support_App, airline, flight, mongoCRUD
+> currentFolder > mserver
 
-+ got 3 REST route/endpoints and 1 static page(about)
++ got 3 REST endpoints/1 static pg(about)
 	- all links working
-	- each one has: endpoint/:endpointID
-	- tested w/postman
-+ adding bootstrap
+	- each endpoint/:endpointID (postman)
++ starting w/bootstrap
 
 
 <kbd>in-progress</kbd>

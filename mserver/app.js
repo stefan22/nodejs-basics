@@ -30,6 +30,13 @@ app.use(cookieParser());
 // static server
 app.use(express.static(path.join(__dirname, 'public')));
 
+//example
+//var datafile = require('./data/data.json');
+//setting some data avail across entire proj
+//app.set('appdata', datafile);
+//then in route
+//var datafile = req.app.get('appdata');
+
 // routes endpoints
 app.use('/', index);
 app.use('/users', users);
@@ -53,7 +60,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('errors/error');
 });
 
 module.exports = app;

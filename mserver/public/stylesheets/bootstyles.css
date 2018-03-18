@@ -1,0 +1,28 @@
+/* jumbotron */
+.jumbotron {
+	margin-bottom: 0;
+	width:100%;
+	height: auto;
+	background-image:url(../images/header.jpeg);
+	background-size:cover;
+	background-position: 0 25%;
+	background-repeat: no-repeat;
+	color:#fff;
+}
+
+.headerline {
+  width:100%;
+}
+
+.foodIcon {
+    width: 100%;
+    max-width: 35px;
+    height: auto;
+    display: inline-block;
+    border: 1px solid #5a0e12;
+    margin-left: .3em;
+    opacity: .9;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: -1px 1px 2px 0px #5a1617;
+}
