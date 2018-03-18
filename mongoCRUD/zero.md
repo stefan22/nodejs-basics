@@ -1,6 +1,6 @@
-# mongo
+# mongo  <kbd>:page_with_curl:</kbd>
 
-### NoSQL databases
+### NoSQL databases  &nbsp; :nut_and_bolt:
 
 - 4 broad categories
 	+ `document databases` (e.g MongoDB)
@@ -8,7 +8,7 @@
 	+ column-family databases (e.g Cassandra)
 	+ graph databases (e.g Neo4J)
 
-#### document databases
+#### document databases  &nbsp; :hammer:
 
 - A `self-contained` piece of information
 
@@ -45,7 +45,7 @@
 - Mongo stores the documents in a `BSON` format (binary JSON)
 
 
-#### mongoDB `ObjectId`
+#### mongoDB `ObjectId`  &nbsp; :pencil:
 
 - every `document` in mongo must have an `_id` field that is `unique` (acts as     
   a `primary key` for the document, and unique to `each document`). 
@@ -68,7 +68,7 @@
 
 
 ```
-	ex: ObjectId (in mongoDB)
+	ex: ObjectId (in mongoDB)  &nbsp; :book:
 	______________________________________________________________
 	|	       |                   |           |              |
 	|   Timestamp  |   Machine ID      |  Proc.    |   Increment  |
