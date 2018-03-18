@@ -64,11 +64,11 @@
 ```
 
 
-### ObjectId => `stores` some pieces of `information` via this long string
+### ObjectId => `stores` some pieces of `information` via this long string  &nbsp; :book:
 
 
 ```
-	ex: ObjectId (in mongoDB)  &nbsp; :book:
+	ex: ObjectId (in mongoDB) 
 	______________________________________________________________
 	|	       |                   |           |              |
 	|   Timestamp  |   Machine ID      |  Proc.    |   Increment  |
