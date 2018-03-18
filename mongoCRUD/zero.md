@@ -77,16 +77,15 @@
         |______________|___________________|___________|______________| 
 
 
-		* first 4 bytes is the timestamp
-		* next 3 bytes stores the machine ID on which Mongo server is running
-		* next 2 bytes is the specific mongo process that created the document
-		* last 3 bytes is the increment; each new document within a second
-		  will get a new increment value
-
-		* given an `object id` you can for example, retrieve `timeStamp` information:
-		  ex:
-		  	//call method
-		  	id.getTimestamp(). //=> will return the time stamp in ISO date format	  	
+	* first 4 bytes is the timestamp
+	* next 3 bytes stores the machine ID on which Mongo server is running
+	* next 2 bytes is the specific mongo process that created the document
+	* last 3 bytes is the increment; each new document within a second will       
+	  get a new increment value
+        * given an `object id` you can for example, retrieve `timeStamp` information:     
+	  ex:      
+	     //call method . 
+	     id.getTimestamp(). //=> will return the time stamp in ISO date format	  	
 
 
 ```
