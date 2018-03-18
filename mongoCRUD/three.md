@@ -15,7 +15,8 @@
 
 > to examine your queries, you can use `explain(executionStats)`  
 
-- how-to: first run your queries on the shell  &nbsp; :pill:
+
+### how-to: first run your queries on the shell  &nbsp; :pill:
 
 ```
 	db.caltrdb.find({"tourPackage":"Chinatown"}).explain("executionStats")
