@@ -10,13 +10,12 @@ nodexpress application w/rest api route support
 
 
 <kbd>in-progress</kbd>
-![](public/images/scaffold.png)
+![](mserver/public/images/scaffold.png)
 
 
 
 
-<kbd>in-progress</kbd>
-![](public/images/startingpoint.png)
+
 
 
 
