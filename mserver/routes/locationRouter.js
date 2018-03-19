@@ -10,18 +10,15 @@ locationRouter.use(bodyParser.json());
 
 //mount to root
 locationRouter.route('/').
-//all
 all((req,res,next) => {
     res.statusCode = 200;
-    res.setHeader("Content-Type", "text/plain");
+    res.setHeader("Content-Type", "text/html");
     next();
 
 }).
-
-//get
 get((req,res,next) => {
-    res.end("Sending all locations avail to you the client");
-
+    //res.end("Sending all locations avail to you the client");
+    res.render('locations');
 }).
 
 //post

@@ -13,13 +13,14 @@ promoRouter.route('/').
 //all
 all((req,res,next) => {
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Type', 'text/html');
     next();
 }).
 
 //get
 get((req,res,next) => {
-    res.end("All promotions will be send to you shortly");
+    //res.end("All promotions will be send to you shortly");
+    res.render('promotions');
 
 }).
 

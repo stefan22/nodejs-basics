@@ -26,3 +26,104 @@
     padding: 5px;
     box-shadow: -1px 1px 2px 0px #5a1617;
 }
+
+
+/* footer titles */
+
+/* footer */
+
+.footer {
+  background-color: #631218;
+  margin:3em auto 0 auto;
+  padding: 30px 0px 20px 0px;
+}
+
+.btn-outline-primary {
+  background-color: gainsboro;
+  border-color: #ffffff;
+}
+
+
+
+/* footer titles */
+
+footer h5 {
+ margin-bottom: 1em;
+ font-weight: normal;
+ color: #fdfdfd;
+}
+
+/* footer links */
+
+.lisfoo a.btn {
+  padding:0;
+  vertical-align: top; /*aligns with address */
+  color:#eeeeee;
+ 
+}
+
+address {
+  font-size: 80%;
+  color: #eeeeee;
+  font-weight: normal;
+}
+
+address a {
+  text-decoration: underline;
+  color:#eeeeee;
+  cursor: pointer;
+}
+
+
+.top {
+  text-align: right;
+  margin:2em 0 0 0;
+}
+
+.top::after {
+  content: '^ ';
+}
+
+.top a {
+  text-decoration: none;
+  color: #292b2c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* social footer */
+
+.socialmedia {
+ margin:2em 0 2em;
+ text-align: center;
+ width:99%;
+}
+
+.socialmedia a {
+  margin: 0 .3em;
+  color: #1565C0;
+  padding: 3px 7px;
+  background: aliceblue;
+  margin-bottom: 15px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 4px;
+  min-width: 75px;
+  font-size: 92%;
+}
+
+.btn-social-icon {
+  margin-left:.35em;
+  margin-bottom: .5em;
+}
+
+/* copy row footer */
+.copy {
+  margin: 0;
+  font-size: 75%;
+  color: #1f090b;
+  font-weight: bold;
+ text-align: center;
+
+}

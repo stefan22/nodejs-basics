@@ -12,13 +12,14 @@ dishRouter.use(bodyParser.json());
 dishRouter.route('/').
 all((req,res,next) => {//all endpoints/methods-dishes
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Type', 'text/html');
     //next passes res.settings to get at same endpoint
     next();
 })
 .get((req,res,next) => {
     //ends handling of get req
-    res.end("Dishes information will be send to you ASAP!");
+    //res.end("Dishes information will be send to you ASAP!");
+    res.render('dishes');
 })
 .post((req,res,next) => {//req.all got it first,then code here exec
     //here extracting info from inside req.body (json) 
