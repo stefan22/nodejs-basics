@@ -1,6 +1,4 @@
-## REST API with Express, MongoDB and Mongoose:
-
-Full-fledged REST API server with Express, MongoDB and Mongoose schemas and models (end to end implementation)
+## REST API with Express, MongoDB and Mongoose: (end-to-end implementation)
 
 > a GET request coming from the client, means that the client wants to retrieve data
 > from the server and in order to get this data, the request will have to be handle 
