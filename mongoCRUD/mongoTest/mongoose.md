@@ -1,5 +1,9 @@
 ## mongoose
 
+- as far as what to use/or choose => it comes down to mongodb being the native node driver, while      
+  mongoose is the object modeling tool (that is if you want to use a schema)....so mongoose is the obvious choice in     
+  my opinion.
+
 - mongodb driver => allows the node applicaton to communicate with a mongodb server    
   as well as store and retrieve documents from the mongodb server.
   `mongodb` driver also allows you to create collections within a database, add   
