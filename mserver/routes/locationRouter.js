@@ -1,9 +1,12 @@
 //location router
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+//locations model
+const Locations = require('../models/locations');
 
 //express router instance
-var locationRouter = express.Router();
+const locationRouter = express.Router();
 
 //middleware
 locationRouter.use(bodyParser.json());
@@ -11,39 +14,62 @@ locationRouter.use(bodyParser.json());
 //mount to root
 locationRouter.route('/').
 all((req,res,next) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "text/html");
+    //res.statusCode = 200;
+    //res.setHeader("Content-Type", "text/html");
     next();
 
 }).
 get((req,res,next) => {
-    //res.end("Sending all locations avail to you the client");
-    res.render('locations');
+    // all locations
+    Locations.find({}).
+        then((locations) => {
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'application/json');
+            res.json(locations);
+        }).
+        catch((err) => {
+            console.log(err);
+            next(err);
+        });
+
 }).
 
 //post
 post((req,res,next) => {
-    res.write("Adding a new location: \n");
-    res.write("New location name: " + req.body.locname + "\n");
-    res.end("Thank you");
+    Locations.create(req.body).
+        then((location) => {
+            res.statusCode = 200;
+            res.setHeader('Content-Type','application/json');
+            res.json(location);
+        }).
+        catch((err) => {
+            console.log(err);
+            next(err);
+        });
 
 }).
 
 //put
 put((req,res,next) => {
     res.statusCode = 403;
-    res.end("cannot do updates here");
+    res.end("update? forget about it!");
 
 
 }).
 
 //delete
 delete((req,res,next) => {
-    res.statusCode = 200;
-    res.write("deleting in progress.. \n");
-    res.write("all locations have been successfully deleted \n");
-    res.end("although not recommended.. too late already - all deleted!");
-
+    // remove all location
+    Locations.remove({}).
+        then((resp) => {
+            res.statusCode = 200;
+            res.setHeader('Content-Type','application/json');
+            res.json(resp);
+        }).
+        catch((err) => {
+            console.log(err);
+            next(err);
+        });
 });
 
 
@@ -52,43 +78,63 @@ delete((req,res,next) => {
 locationRouter.route('/:locId').
 //app
 all((req,res,next) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type","text/plain");
+    //res.statusCode = 200;
+    //res.setHeader("Content-Type","text/plain");
     next();
 
 }).
 
 //get
 get((req,res,next) => {
-    res.write("location information being loaded.. \n");
-    res.write("Location page id: " + req.params.locId);
-    res.end("\nthank you.");
-
-
+    Locations.findById(req.params.locId)
+        .then((locId) => {
+            res.statusCode = 200;
+            res.setHeader("Content-Type","application/json");
+            res.json(locId);
+        })
+        .catch((err) => {
+            console.log(err);
+            next(err);
+        });
 }).
 
 //post
 post((req,res,next) => {
     res.statusCode = 403;
-    res.end("this op is not allowed");
+    res.end("post what? forget about it!");
 
 
 }).
 
 //put
 put((req,res,next) => {
-    res.write("Updating location..\n");
-    res.write("Location id: " + req.params.locId + "\n");
-    res.write("Location name: " + req.body.locname);
-    res.end("\nlocation been updated");
+    Locations.findByIdAndUpdate(req.params.locId, {
+        $set: req.body
+    }, {new: true })
+    .then((location) => {
+        res.statusCode = 200;
+        res.setHeader("Content-Type","application/json");
+        res.json(location);
+    }).
+    catch((err) => {
+        console.log(err);
+        next(err);
+    });
+    
 }).
 
 //delete
 delete((req,res,next) => {
-    res.write("deleting..\n");
-    res.write("deleting location id: " + req.params.locId + "\n");
-    res.end("successfully deleted: " + req.body.locname);
-
+    Locations.findByIdAndRemove(req.params.locId).
+    then((resp) => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type','application/json');
+        res.json(resp)
+    }).
+    catch((err) => {
+        console.log(err);
+        next(err);
+    })
 });
 
 

@@ -12,6 +12,24 @@ const dishRouter = require('./routes/dishRouter');
 const locationRouter = require('./routes/locationRouter');
 const promoRouter = require('./routes/promoRouter');
 
+// mongo
+const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+// dishes model
+const Dishes = require('./models/dishes');
+// locations model
+const Locations = require('./models/locations');
+// url connect
+const url = 'mongodb://localhost:27017/testa';
+// db connect
+mongoose.connect(url, {
+  useMongoClient: true  //gets rid of deprecated msg on connect method
+})
+  .then((db) =>   { 
+    console.log(`connected to database: ${url} \n …………………………………………………………………………………………………………………………………………… endºf løgs`);  
+}).catch((err) => { console.log(err); });
+
+
 
 // express app instance
 const app = express();
@@ -29,6 +47,7 @@ app.use(cookieParser());
 
 // static server
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 //example
 //var datafile = require('./data/data.json');

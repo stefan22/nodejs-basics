@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Nandos",
+        "city": "Mile End",
+        "category": "Afro-Portuguese",
+        "days": 7,
+        "openLate": true
+    },
+    {
+        "name": "KFC",
+        "city": "London",
+        "category": "Fried-chicken",
+        "days": 7,
+        "openLate": true
+    },
+    {
+        "name": "Zizzi",
+        "city": "Canary Wharf",
+        "category": "Italian",
+        "days": 4,
+        "openLate": false
+    },
+    {
+        "name": "Los Toritos",
+        "city": "London",
+        "category": "Mexican",
+        "days": 7,
+        "openLate": true
+    },
+    {
+        "name": "Las Iguanas",
+        "city": "Stratford",
+        "category": "Latin America",
+        "days": 6,
+        "openLate": true
+    },
+    {
+        "name": "Giraffe",
+        "city": "London",
+        "category": "French",
+        "days": 5,
+        "openLate": false
+    },
+    {
+        "name": "Clove Club",
+        "city": "London",
+        "category": "British",
+        "days": 6,
+        "openLate": true
+    }
+]

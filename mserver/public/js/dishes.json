@@ -1,0 +1,64 @@
+{
+    "dishes": [
+
+        {
+            "name": "polenta",
+            "image": "images/polenta.png",
+            "category": "mains",
+            "label": "hot",
+            "price": "4.99",
+            "featured": true,
+            "description": "corn flour dish",
+            "comments": [
+                
+                {
+                    "rating":1,
+                    "comment": "damn corn, forget about it!",
+                    "author": "Joe Pesci"
+                },
+                {
+                    "rating":2,
+                    "comment": "The food at this particular location clearly falls under the WMD category. Someday, I/'m going to pre-emptively invade this place, and I bet when I finally do it, the waitstaff will greet me as their great liberator.",
+                    "author": "Anonymous"
+                },
+                {
+                    "rating":5,
+                    "comment": "amazingly delicious, mouthwatering. Polenta heaven!",
+                    "author": "Chris Rogers"
+                }
+            ]
+        },
+
+        {
+            "name": "pizza",
+            "image": "images/pizza.png",
+            "category": "mains",
+            "label": "hot",
+            "price": "8.99",
+            "featured": true,
+            "description": "large pepperoni and cheese pizza",
+            "comments": [
+                
+                {
+                    "rating":2,
+                    "comment": "damn pizza, forget about it!",
+                    "author": "Joe Pesci"
+                },
+                {
+                    "rating":3,
+                    "comment": "I really love this place. I have been going since it opened. I had the biggest crush on the daughter of the owner, and I would come after class, but one day a skate store opened up next door and one of them got her pregnant. I never saw her again....oh yeah, about the pizza. If you like delicious pizza, these guys make an excellent pie.",
+                    "author": "Anonymous"
+                },
+                {
+                    "rating":4,
+                    "comment": "amazingly delicious, mouthwatering. Pizza heaven!",
+                    "author": "Chris Rogers"
+                }
+            ]
+        }
+
+
+
+    ]
+
+}
