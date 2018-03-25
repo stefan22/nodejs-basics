@@ -23,7 +23,7 @@ NodeXpress Application w/REST Routes, EJS & Mongodb
 - [models/locations] configured locations.js mongoose schema model
 - [mongodb:27017/testa/locations] added some locations json data w/postman to mongodb
 - [public/js] json files at public/js
-- [routes/dishes/dishRouter] comments endpoints as a subset doc of /dishes/dishId - in progress..
+
 
 
 
