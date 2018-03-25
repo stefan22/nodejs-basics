@@ -23,13 +23,13 @@ Full-fledged REST API server with Express, MongoDB and Mongoose schemas and mode
 ```
     Router().route('/uri')                      Mongoose Scheema + MongoDB
     .get(
-        ------------------------------->        Dishes.find({},
+        ------------------------------->        URI.find({},
                                                  
     );                                          );
 
 
     .post(                                     
-        -------------------------------->       Dishes.create(
+        -------------------------------->       URI.create(
 
     );                                          );
 
