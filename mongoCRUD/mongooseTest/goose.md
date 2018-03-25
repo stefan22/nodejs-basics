@@ -5,7 +5,7 @@
 > by the Express Server; which once the processing is done, performs a query operation
 > on the database. Then the retrieve data will be sent back to the server as a reply
 > message.              
-> POST request does the same thing. It brings some data into the service, that will
+> a POST request does the same thing. It brings some data into the service, that will
 > need to first be processed by the Express server. Information needed to be stored in 
 > database then retrieve from the body of incoming POST request and a corresponding 
 > create request needs to be initiated from the Express server to the Mongo database.
