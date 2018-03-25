@@ -1,11 +1,6 @@
 ## REST API with Express, MongoDB and Mongoose:
 
-Rest App developed with the Express framework together with the Mongoose schemas and models and the MongoDB database to provide the complete end-to-end implementation of the server to support REST API.
-
-Develop a full-fledged REST API server with Express, MongoDB and Mongoose
-Implement the end-to-end solution integrating Express, Node and Mongo.
-
-
+Full-fledged REST API server with Express, MongoDB and Mongoose schemas and models (end to end implementation)
 
 > a GET request coming from the client, means that the client wants to retrieve data
 > from the server and in order to get this data, the request will have to be handle 
