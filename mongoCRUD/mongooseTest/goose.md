@@ -37,6 +37,32 @@ Full-fledged REST API server with Express, MongoDB and Mongoose schemas and mode
 ```
 
 
+## mongodb & mongoose 
+(this is what i was looking for)
+
+- as far as which one to use:
+    + it comes down to what you're trying to do,
+    + choice is simple i think, mongodb is just a native node drive, while mongoose is the object modeling tool.
+    + if you want to use a schema model, then gotta use mongoose...case closed. :)
+
+
+### mongodb driver
+
+   + allows the node applicaton to communicate with a mongodb server    
+   + as well as to store and retrieve documents from the mongodb server.
+   + `mongodb` driver also allows you to create collections within a database, 
+   + add documents to the collections and perform operations.
+
+
+### mongoose node module
+   - enables you to define a schema and a structure for your documents stored in MongoDB database. 
+   
+   - mongoose ODM (object document mapping/ or object data model) 
+   
+      + use mongoose if you need to add structure to your documents through a schema.
+      + schema defines the structure of the documents.
+      + schema defines all the fields, type of fields, and features for validation.
+      + schema types: string , date, boolean, array ...
 
 
 
