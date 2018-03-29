@@ -1,0 +1,22 @@
+[
+    {
+        "promo_name": "Christmas Sale",
+        "promo_desc":"25% percent off in all purchases",
+        "promo_type":"discount",
+        "start_time": "22nd of December",
+        "end_time": "27th of December",
+        "duration": 5
+       
+    },
+
+    {
+        "promo_name": "Sports Event Special Offer",
+        "promo_desc":"10% percent off every Saturday during match time",
+        "promo_type":"event",
+        "start_time": "Saturday",
+        "end_time": "Saturday",
+        "duration": 1
+       
+    }
+    
+]

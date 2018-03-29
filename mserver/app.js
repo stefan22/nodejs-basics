@@ -10,7 +10,7 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const dishRouter = require('./routes/dishRouter');
 const locationRouter = require('./routes/locationRouter');
-const promoRouter = require('./routes/promoRouter');
+const promotionRouter = require('./routes/promotionRouter');
 
 // mongo
 const mongoose = require('mongoose');
@@ -19,6 +19,8 @@ mongoose.Promise = require('bluebird');
 const Dishes = require('./models/dishes');
 // locations model
 const Locations = require('./models/locations');
+// promotions model
+const Promotions = require('./models/promotions');
 // url connect
 const url = 'mongodb://localhost:27017/testa';
 // db connect
@@ -61,7 +63,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/dishes', dishRouter);
 app.use('/locations', locationRouter);
-app.use('/promotions', promoRouter);
+app.use('/promotions', promotionRouter);
 
 
 // catch 404 and forward to error handler
