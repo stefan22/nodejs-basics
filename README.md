@@ -27,6 +27,7 @@ NodeXpress Application w/REST Routes, EJS & Mongodb
 
 
 
+
 <br/>
 <hr/>
 
@@ -35,7 +36,7 @@ NodeXpress Application w/REST Routes, EJS & Mongodb
 
 <br />
 
-![](public/images/all-locations.png)
+![](mserver/public/images/all-locations.png)
 
 <br/>
 
@@ -45,7 +46,7 @@ NodeXpress Application w/REST Routes, EJS & Mongodb
 
 <br />
 
-![](public/images/all-dishes.png)
+![](mserver/public/images/all-dishes.png)
 
 <br/>
 
@@ -55,7 +56,7 @@ NodeXpress Application w/REST Routes, EJS & Mongodb
 
 <br />
 
-![](public/images/single-dish.png)
+![](mserver/public/images/single-dish.png)
 
 <br/>
 
@@ -65,7 +66,7 @@ NodeXpress Application w/REST Routes, EJS & Mongodb
 
 <br />
 
-![](public/images/home-page.png)
+![](mserver/public/images/home-page.png)
 
 <br/>
 
