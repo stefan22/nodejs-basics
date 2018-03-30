@@ -23,6 +23,12 @@ NodeXpress Application w/REST Routes, EJS & Mongodb
 - [models/locations] configured locations.js mongoose schema model
 - [mongodb:27017/testa/locations] added some locations json data w/postman to mongodb
 - [public/js] json files at public/js
+- [models/promotions] configured promotions schema model
+- [mongodb:27017/testa/promotions] ran some promotions json data w/postman
+- [mongodb:27017/testa/dishes/:dishId/comments] configured subdocs comments
+- [mongodb:27017/testa/dishes/:dishId/comments] ran some comments json data w/postman
+- [models/dishes/:dishId/comments] `$pushAll` error when using `POST` to include a new comment.
+  Found `solution` online: by adding `usePushEach:true` as an option to the dish schema.
 
 
 
