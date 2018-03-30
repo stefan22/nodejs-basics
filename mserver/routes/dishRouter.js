@@ -242,7 +242,7 @@ dishRouter.route('/:dishId').
                 if(dish !== null && dish.comments.id(req.params.commentId)) {
                     res.statusCode = 200;
                     res.setHeader('Content-Type','application/json');
-                    res.json(dish.comments.id(req.params.comm));
+                    res.json(dish.comments.id(req.params.commentId));
                 }//if
                 else if(dish == null) {
                     err = new Error("Dish " + req.params.dishId + " doesn't exist" );
