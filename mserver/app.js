@@ -50,6 +50,7 @@ app.use(cookieParser());
 // static server
 app.use(express.static(path.join(__dirname, 'public')));
 
+mongoose.set('debug',true);
 
 //example
 //var datafile = require('./data/data.json');

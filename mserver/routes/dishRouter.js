@@ -144,7 +144,7 @@ dishRouter.route('/:dishId').
             if(dish !== null) {
                 res.statusCode = 200;
                 res.setHeader('Content-Type','application/json');
-                res.json(dish.comments);
+                res.json(dish.comments);  
             }
             else {
                 res.statusCode = 404;
@@ -161,23 +161,27 @@ dishRouter.route('/:dishId').
     })
     .post((req, res, next) => {
         //find dish
-        Dishes.findById('req.params.dishId').
+        Dishes.findById(req.params.dishId).
            then((dish) => {
                if(dish !== null) {
                    //push req body
                    dish.comments.push(req.body);
                    dish.save().
                     then((dish) => {
-                        res.setStatus = 200;
+                        res.statusCode = 200;
                         res.setHeader('Content-Type', 'application/json');
                         // back updated dish
                         res.json(dish);
+                    },
+                    (err) => {
+                        console.log(req.params.dishId);
+                        console.log(req.body);
+                        next(err);
                     });   
                }//if
                else {
-                   res.setStatus = 404;
-                   res.write('not found..forget about it!')
-                   //back to app & run 404
+                   err = new Error('Dish ' + req.params.dishId);
+                   err.status = 404;
                    return next(err);
                }
            }).
@@ -195,20 +199,18 @@ dishRouter.route('/:dishId').
     .delete((req, res, next) => {//danger
         // remove all comments
         Dish.findById(req.params.dishId).
-            then((dish) => {
-                var coms = dish.comments.id,
-                    comslength = dish.comments.length;
+            then((dish ) => {
                 if(dish !== null) {
                     //remove comments on dish
-                    for(var i=0; i < comslength; i++) {
-                       coms(dish.comments[i]._id).remove();
+                    for(var i=0; i < dish.comments.length; i++) {
+                        //accessing subdocument
+                       //dish.comments.id(dish.comments[i]._id).remove();
                     }
                     dish.save().
                     then((dish) => {
                         res.setStatus = 200;
                         res.setHeader('Content-Type', 'application/json');
-                        // back updated dish
-                        res.json(dish);
+                        res.json(dish); //updated dish
                     });   
                     
                 }//if
@@ -218,12 +220,16 @@ dishRouter.route('/:dishId').
                     //back to app & run 404
                     return next(err);
                 }
+            })
+            .catch((err) => {
+                console.log(err);
+                next(err);
             });
     });
 
 
 /*
-     /:dishId/comments/commentId endpoint
+     /:dishId/comments/commentId      endpoint
 */
     
     dishRouter.route('/:dishId/comments/:commentId').
@@ -231,24 +237,68 @@ dishRouter.route('/:dishId').
         next();
     })
     .get((req, res, next) => {
-        Dishes.findById('req.params.dishId').
+        Dishes.findById(req.params.dishId).
             then((dish) => {
-                if(dish !== null) {
-                    for(var i=0; i < dish.comments.length; i++) {
-                        if(dish.comments[i]._id == commentId ) {
-                            
-                        }
-                    }
+                if(dish !== null && dish.comments.id(req.params.commentId)) {
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type','application/json');
+                    res.json(dish.comments.id(req.params.comm));
                 }//if
+                else if(dish == null) {
+                    err = new Error("Dish " + req.params.dishId + " doesn't exist" );
+                    err.status = 404;
+                    return next(err);
+                }
+                else {
+                    err = new Error("Comment " + req.params.commentId + " not exists");
+                    err.status = 404;
+                    return next(err);
+                }
             })
+            .catch((err) => {
+                console.log(err);
+                next(err);
+            });
     })
     .post((req, res, next) => {
-        Dishes.create(req.body)
-            .then((dish) => {
-                console.log('dish created: ', dish);
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'application/json');
-                res.json(dish);
+        res.statusCode = 403;
+        res.end("Not supported, forget about it");
+
+    })
+    .put((req, res, next) => {
+        Dishes.findById(req.params.dishId).
+            then((dish) => {
+                //if dish&comment exist
+                if(dish !== null && dish.comments.id(req.params.commentId)) {
+                    //allowed to change rating
+                    if(req.body.rating) {
+                        //updated rating
+                        dish.comments.id(req.params.commentId).rating = req.body.rating;
+                    }
+                    //allowed comment to be updated 
+                    if(req.body.comment) {
+                        //updated comment
+                        dish.comments.id(req.params.commentId).rating = req.body.comment;
+                    }
+                    dish.save()
+                    .then((dish) => {
+                        res.statusCode = 200;
+                        res.setHeader('Content-Type','application/json');
+                        res.json(dish);
+
+                    })
+                    
+                }//if
+                else if(dish == null) {
+                    err = new Error("Dish " + req.params.dishId + " doesn't exist" );
+                    err.status = 404;
+                    return next(err);
+                }
+                else {
+                    err = new Error("Comment " + req.params.commentId + " not exists");
+                    err.status = 404;
+                    return next(err);
+                }
             })
             .catch((err) => {
                 console.log(err);
@@ -256,22 +306,35 @@ dishRouter.route('/:dishId').
             });
 
     })
-    .put((req, res, next) => {
-        res.statusCode = 403;
-        res.end('PUT not allowed, capisci!');
-
-    })
     .delete((req, res, next) => {
-        // remove all
-        Dishes.remove({})
-            .then((resp) => {
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'application/json');
-                res.json(resp);
+        // remove a comment
+        Dish.findById(req.params.dishId).
+            then((dish ) => {
+                if(dish !== null && dish.comments.id(req.params.commentId) !== null) {
+                    dish.comments.id(req.params.commentId).remove();
+                    dish.save()
+                    .then((dish) => {
+                        res.setStatus = 200;
+                        res.setHeader('Content-Type', 'application/json');
+                        res.json(dish); //dish updated no comment
+                    });   
+                    
+                }//if
+                else if(dish == null) {
+                    err = new Error("Dish " + req.params.dishId + " doesn't exist" );
+                    err.status = 404;
+                    return next(err);
+                }
+                else {
+                    err = new Error("Comment " + req.params.commentId + " not exists");
+                    err.status = 404;
+                    return next(err);
+                }
             })
             .catch((err) => {
+                console.log(err);
                 next(err);
-            })
+            });
 
     });
 

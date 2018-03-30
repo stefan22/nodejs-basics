@@ -34,6 +34,8 @@ const commentSchema = new Schema(
         timestamp: true
     }
 
+    
+
 
 );
 
@@ -72,6 +74,10 @@ const dishSchema = new Schema(
         },
 
         comments: [commentSchema]
+    },
+
+    {
+        usePushEach: true
     },
 
     {
