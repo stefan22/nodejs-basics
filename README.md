@@ -7,7 +7,7 @@ How-to:
 + `mongod` starts database, & `mongo` to access database
 + run `npm start` to start server in localhost:3000
 
-Notes:
+Notes:               
  Main access point is `app.js` (package.json) & `mserver` is root dir for this application .        
  Mongoose debug mode set to true atm.
 
