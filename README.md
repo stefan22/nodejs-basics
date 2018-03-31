@@ -1,6 +1,15 @@
 ## nodexpress app
 
 Current working directory => mserver
+How-to:
++ cd to mserver
++ install dependencies
++ mongod starts database, & mongo to access database
++ run `npm start` to start server in localhost:3000
+
+Other:
++ main access point is app.js (package.json) & mserver is root dir for this application
++ mongoose debug mode set to true atm
 
 - [app.js] express server
 - [routes folder] rest routes
