@@ -2,7 +2,7 @@
 
 Current working directory => mserver        
 How-to:
-+ cd to mserver
++ cd to `mserver`
 + install dependencies
 + `mongod` starts database, & `mongo` to access database
 + run `npm start` to start server in localhost:3000
