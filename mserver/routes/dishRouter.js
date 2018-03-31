@@ -26,7 +26,13 @@ dishRouter.route('/').
             then((dishes) => {
                 res.statusCode = 200;
                 res.setHeader("Content-Type", "application/json");
-                res.json(dishes);
+                // res.json(dishes);
+                var data = dishes;
+                res.render('dishes', {
+                    pageTitle: 'Dishes page',
+                    alldishes: data,
+                    dishes: true
+                });
             }).
             catch((err) => {
                 console.log(err);
@@ -87,7 +93,7 @@ dishRouter.route('/:dishId').
             .catch((err) => {
                 next(err);
             });
-       
+
 
     }).
     post((req, res, next) => {//post -irrelevant here
@@ -99,17 +105,17 @@ dishRouter.route('/:dishId').
     put((req, res, next) => {//put upddate
         //res.write('Updating dish: ' + req.params.dishId + '\n');
         //res.end("update : " + req.body.name + " details \n" + req.body.description)
-        Dishes.findByIdAndUpdate(req.params.dishId, {   
+        Dishes.findByIdAndUpdate(req.params.dishId, {
             $set: req.body
-        }, {new: true})
-        .then((dish) => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type','application/json');
-            res.json(dish);
-        })
-        .catch((err) => {
-            next(err);
-        });
+        }, { new: true })
+            .then((dish) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.json(dish);
+            })
+            .catch((err) => {
+                next(err);
+            });
 
 
     }).
@@ -133,62 +139,62 @@ dishRouter.route('/:dishId').
      /:dishId/comments endpoint
 */
 
-    
-    dishRouter.route('/:dishId/comments').
+
+dishRouter.route('/:dishId/comments').
     all((req, res, next) => {
         next();
     })
     .get((req, res, next) => {
-       Dishes.findById(req.params.dishId).
-        then((dish) => {
-            if(dish !== null) {
-                res.statusCode = 200;
-                res.setHeader('Content-Type','application/json');
-                res.json(dish.comments);  
-            }
-            else {
-                res.statusCode = 404;
-                err = new Error('Dish ' + req.params.body + ' not found');
-                return next(err);
-            }
-        }).
-        catch((err) => {
-            console.log(err);
-            next(err);
-        });        
+        Dishes.findById(req.params.dishId).
+            then((dish) => {
+                if (dish !== null) {
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', 'application/json');
+                    res.json(dish.comments);
+                }
+                else {
+                    res.statusCode = 404;
+                    err = new Error('Dish ' + req.params.body + ' not found');
+                    return next(err);
+                }
+            }).
+            catch((err) => {
+                console.log(err);
+                next(err);
+            });
 
 
     })
     .post((req, res, next) => {
         //find dish
         Dishes.findById(req.params.dishId).
-           then((dish) => {
-               if(dish !== null) {
-                   //push req body
-                   dish.comments.push(req.body);
-                   dish.save().
-                    then((dish) => {
-                        res.statusCode = 200;
-                        res.setHeader('Content-Type', 'application/json');
-                        // back updated dish
-                        res.json(dish);
-                    },
-                    (err) => {
-                        console.log(req.params.dishId);
-                        console.log(req.body);
-                        next(err);
-                    });   
-               }//if
-               else {
-                   err = new Error('Dish ' + req.params.dishId);
-                   err.status = 404;
-                   return next(err);
-               }
-           }).
-           catch((err) => {
-               console.log(err);
-               next(err);
-           });
+            then((dish) => {
+                if (dish !== null) {
+                    //push req body
+                    dish.comments.push(req.body);
+                    dish.save().
+                        then((dish) => {
+                            res.statusCode = 200;
+                            res.setHeader('Content-Type', 'application/json');
+                            // back updated dish
+                            res.json(dish);
+                        },
+                            (err) => {
+                                console.log(req.params.dishId);
+                                console.log(req.body);
+                                next(err);
+                            });
+                }//if
+                else {
+                    err = new Error('Dish ' + req.params.dishId);
+                    err.status = 404;
+                    return next(err);
+                }
+            }).
+            catch((err) => {
+                console.log(err);
+                next(err);
+            });
 
     })
     .put((req, res, next) => {
@@ -199,20 +205,20 @@ dishRouter.route('/:dishId').
     .delete((req, res, next) => {//danger
         // remove all comments
         Dish.findById(req.params.dishId).
-            then((dish ) => {
-                if(dish !== null) {
+            then((dish) => {
+                if (dish !== null) {
                     //remove comments on dish
-                    for(var i=0; i < dish.comments.length; i++) {
+                    for (var i = 0; i < dish.comments.length; i++) {
                         //accessing subdocument
-                       //dish.comments.id(dish.comments[i]._id).remove();
+                        //dish.comments.id(dish.comments[i]._id).remove();
                     }
                     dish.save().
-                    then((dish) => {
-                        res.setStatus = 200;
-                        res.setHeader('Content-Type', 'application/json');
-                        res.json(dish); //updated dish
-                    });   
-                    
+                        then((dish) => {
+                            res.setStatus = 200;
+                            res.setHeader('Content-Type', 'application/json');
+                            res.json(dish); //updated dish
+                        });
+
                 }//if
                 else {
                     res.setStatus = 404;
@@ -231,21 +237,21 @@ dishRouter.route('/:dishId').
 /*
      /:dishId/comments/commentId      endpoint
 */
-    
-    dishRouter.route('/:dishId/comments/:commentId').
+
+dishRouter.route('/:dishId/comments/:commentId').
     all((req, res, next) => {
         next();
     })
     .get((req, res, next) => {
         Dishes.findById(req.params.dishId).
             then((dish) => {
-                if(dish !== null && dish.comments.id(req.params.commentId)) {
+                if (dish !== null && dish.comments.id(req.params.commentId)) {
                     res.statusCode = 200;
-                    res.setHeader('Content-Type','application/json');
+                    res.setHeader('Content-Type', 'application/json');
                     res.json(dish.comments.id(req.params.commentId));
                 }//if
-                else if(dish == null) {
-                    err = new Error("Dish " + req.params.dishId + " doesn't exist" );
+                else if (dish == null) {
+                    err = new Error("Dish " + req.params.dishId + " doesn't exist");
                     err.status = 404;
                     return next(err);
                 }
@@ -269,28 +275,28 @@ dishRouter.route('/:dishId').
         Dishes.findById(req.params.dishId).
             then((dish) => {
                 //if dish&comment exist
-                if(dish !== null && dish.comments.id(req.params.commentId)) {
+                if (dish !== null && dish.comments.id(req.params.commentId)) {
                     //allowed to change rating
-                    if(req.body.rating) {
+                    if (req.body.rating) {
                         //updated rating
                         dish.comments.id(req.params.commentId).rating = req.body.rating;
                     }
                     //allowed comment to be updated 
-                    if(req.body.comment) {
+                    if (req.body.comment) {
                         //updated comment
-                        dish.comments.id(req.params.commentId).rating = req.body.comment;
+                        dish.comments.id(req.params.commentId).comment = req.body.comment;
                     }
                     dish.save()
-                    .then((dish) => {
-                        res.statusCode = 200;
-                        res.setHeader('Content-Type','application/json');
-                        res.json(dish);
+                        .then((dish) => {
+                            res.statusCode = 200;
+                            res.setHeader('Content-Type', 'application/json');
+                            res.json(dish);
 
-                    })
-                    
+                        })
+
                 }//if
-                else if(dish == null) {
-                    err = new Error("Dish " + req.params.dishId + " doesn't exist" );
+                else if (dish == null) {
+                    err = new Error("Dish " + req.params.dishId + " doesn't exist");
                     err.status = 404;
                     return next(err);
                 }
@@ -309,19 +315,19 @@ dishRouter.route('/:dishId').
     .delete((req, res, next) => {
         // remove a comment
         Dish.findById(req.params.dishId).
-            then((dish ) => {
-                if(dish !== null && dish.comments.id(req.params.commentId) !== null) {
+            then((dish) => {
+                if (dish !== null && dish.comments.id(req.params.commentId) !== null) {
                     dish.comments.id(req.params.commentId).remove();
                     dish.save()
-                    .then((dish) => {
-                        res.setStatus = 200;
-                        res.setHeader('Content-Type', 'application/json');
-                        res.json(dish); //dish updated no comment
-                    });   
-                    
+                        .then((dish) => {
+                            res.setStatus = 200;
+                            res.setHeader('Content-Type', 'application/json');
+                            res.json(dish); //dish updated no comment
+                        });
+
                 }//if
-                else if(dish == null) {
-                    err = new Error("Dish " + req.params.dishId + " doesn't exist" );
+                else if (dish == null) {
+                    err = new Error("Dish " + req.params.dishId + " doesn't exist");
                     err.status = 404;
                     return next(err);
                 }
@@ -338,7 +344,7 @@ dishRouter.route('/:dishId').
 
     });
 
-    
+
 
 
 

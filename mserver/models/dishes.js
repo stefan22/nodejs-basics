@@ -34,9 +34,6 @@ const commentSchema = new Schema(
         timestamp: true
     }
 
-    
-
-
 );
 
 

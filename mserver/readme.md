@@ -20,6 +20,7 @@
 - [mongodb:27017/testa/dishes/:dishId/comments] ran some comments json data w/postman
 - [models/dishes/:dishId/comments] `$pushAll` error when using `POST` to include a new comment.
   Found `solution` online: by adding `usePushEach:true` as an option to the dish schema.
+- [views/dishes] parsed json data & rendered html to dishes with EJS
 
 
 
@@ -53,14 +54,6 @@
 <br />
 
 ![](public/images/single-dish.png)
-
-<br/>
-
-
-
-<br />
-
-![](public/images/comments.png)
 
 <br/>
 

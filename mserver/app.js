@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 // require routes
-const index = require('./routes/index');
+const indexRouter = require('./routes/indexRouter');
 const users = require('./routes/users');
 const dishRouter = require('./routes/dishRouter');
 const locationRouter = require('./routes/locationRouter');
@@ -40,6 +40,10 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//ejs globals
+app.locals.conganas = "Conganas";
+
+
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -60,7 +64,7 @@ mongoose.set('debug',true);
 //var datafile = req.app.get('appdata');
 
 // routes endpoints
-app.use('/', index);
+app.use('/', indexRouter);
 app.use('/users', users);
 app.use('/dishes', dishRouter);
 app.use('/locations', locationRouter);

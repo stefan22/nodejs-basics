@@ -1,23 +1,60 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <% include partials/headerlinks.ejs %>
 </head>
-
 <body>
   <% include partials/header.ejs %>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- if index page -->
+        <% if(typeof dishes !== "undefined") { %>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <% include content/maincontent.ejs %>
-        </div>
-      </div>
+          <h1 class="pageheading"><%= pageTitle %></h1>
+
+       
+        <%  alldishes.forEach(function(dish) {     %>
+          <div class="dishrow">
+              <figure>
+                <img class="dishImg" src="<%= dish.image %>" width="720" height="480">
+              </figure>
+              <ul>
+                <li>Name: <%= dish.name %></li>
+                <li>Category: <%= dish.category %></li>
+                <li>Label: <%= dish.label %></li>
+                <li>Price: £<%= dish.price %></li>
+                <li>Description: <%= dish.description %></li>
+                <li class="comment">Comments:
+                  <ul>
+                    <% dish.comments.forEach(function(comment) { %>
+                        <li class="rating">Rating: <%= comment.rating %></li>
+                        <li>Comment: <%= comment.comment %></li>
+                        <li>Author: <%= comment.author %></li>
+
+                    <%  }); %>
+                  </ul>
+                </li>
+              </ul>
+          </div> 
+
+        <%  });  %>
+         
+
+          
+        
+
+
+
+
+
+        <% } %>
+        <!-- endof index page -->
     </div>
-    <!-- container -->
-    <% include partials/footer.ejs %>
-      <% include partials/footerscripts.ejs %>
+  </div>
+</div>
+<!-- container -->  
+  <% include partials/footer.ejs %>
+  <% include partials/footerscripts.ejs %>
 </body>
-
 </html>

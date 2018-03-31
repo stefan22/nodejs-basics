@@ -1,0 +1,206 @@
+{
+    "dishes": [
+        {
+            "name": "Uthappizza",
+            "image": "images/uthappizza.png",
+            "category": "mains",
+            "label": "Hot",
+            "price": "4.99",
+            "featured": "true",
+            "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
+            "comments": [
+                {
+                    "rating": 5,
+                    "comment": "Imagine all the eatables, living in conFusion!",
+                    "author": "John Lemon",
+                    "date": "2012-10-16T17:57:28.556094Z"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+                    "author": "Paul McVites",
+                    "date": "2014-09-05T17:57:28.556094Z"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Eat it, just eat it!",
+                    "author": "Michael Jaikishan",
+                    "date": "2015-02-13T17:57:28.556094Z"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Ultimate, Reaching for the stars!",
+                    "author": "Ringo Starry",
+                    "date": "2013-12-02T17:57:28.556094Z"
+                },
+                {
+                    "rating": 2,
+                    "comment": "It's your birthday, we're gonna party!",
+                    "author": "25 Cent",
+                    "date": "2011-12-02T17:57:28.556094Z"
+                }
+            ]
+        },
+        {
+            "name": "Zucchipakoda",
+            "image": "images/zucchipakoda.png",
+            "category": "appetizer",
+            "label": "",
+            "price": "1.99",
+            "featured": "false",
+            "description": "Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce",
+            "comments": [
+                {
+                    "rating": 5,
+                    "comment": "Imagine all the eatables, living in conFusion!",
+                    "author": "John Lemon",
+                    "date": "2012-10-16T17:57:28.556094Z"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+                    "author": "Paul McVites",
+                    "date": "2014-09-05T17:57:28.556094Z"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Eat it, just eat it!",
+                    "author": "Michael Jaikishan",
+                    "date": "2015-02-13T17:57:28.556094Z"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Ultimate, Reaching for the stars!",
+                    "author": "Ringo Starry",
+                    "date": "2013-12-02T17:57:28.556094Z"
+                },
+                {
+                    "rating": 2,
+                    "comment": "It's your birthday, we're gonna party!",
+                    "author": "25 Cent",
+                    "date": "2011-12-02T17:57:28.556094Z"
+                }
+            ]
+        },
+        {
+            "name": "Vadonut",
+            "image": "images/vadonut.png",
+            "category": "appetizer",
+            "label": "New",
+            "price": "1.99",
+            "featured": "false",
+            "description": "A quintessential ConFusion experience, is it a vada or is it a donut?",
+            "comments": [
+                {
+                    "rating": 5,
+                    "comment": "Imagine all the eatables, living in conFusion!",
+                    "author": "John Lemon",
+                    "date": "2012-10-16T17:57:28.556094Z"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+                    "author": "Paul McVites",
+                    "date": "2014-09-05T17:57:28.556094Z"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Eat it, just eat it!",
+                    "author": "Michael Jaikishan",
+                    "date": "2015-02-13T17:57:28.556094Z"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Ultimate, Reaching for the stars!",
+                    "author": "Ringo Starry",
+                    "date": "2013-12-02T17:57:28.556094Z"
+                },
+                {
+                    "rating": 2,
+                    "comment": "It's your birthday, we're gonna party!",
+                    "author": "25 Cent",
+                    "date": "2011-12-02T17:57:28.556094Z"
+                }
+            ]
+        },
+        {
+            "name": "ElaiCheese Cake",
+            "image": "images/elaicheesecake.png",
+            "category": "dessert",
+            "label": "",
+            "price": "2.99",
+            "featured": "false",
+            "description": "A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms",
+            "comments": [
+                {
+                    "rating": 5,
+                    "comment": "Imagine all the eatables, living in conFusion!",
+                    "author": "John Lemon",
+                    "date": "2012-10-16T17:57:28.556094Z"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+                    "author": "Paul McVites",
+                    "date": "2014-09-05T17:57:28.556094Z"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Eat it, just eat it!",
+                    "author": "Michael Jaikishan",
+                    "date": "2015-02-13T17:57:28.556094Z"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Ultimate, Reaching for the stars!",
+                    "author": "Ringo Starry",
+                    "date": "2013-12-02T17:57:28.556094Z"
+                },
+                {
+                    "rating": 2,
+                    "comment": "It's your birthday, we're gonna party!",
+                    "author": "25 Cent",
+                    "date": "2011-12-02T17:57:28.556094Z"
+                }
+            ]
+        }
+    ],
+    "promotions": [
+        {
+            "name": "Weekend Grand Buffet",
+            "image": "images/buffet.png",
+            "label": "New",
+            "price": "25",
+            "featured": "true",
+            "description": "Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choices of desserts. Free wine, rum, vodka and soft drinks. All for just £25 per person "
+        }
+    ],
+    "employees": [
+        {
+            "name": "Michael Casino",
+            "image": "images/michael.png",
+            "designation": "Chief Epicurous O'Chef in charge",
+            "abbr": "CEO",
+            "featured": "false",
+            "description": "Our Chief chef, Michael, credits his hardworking Sicilian immigrant parents who undertook the arduous journey to the shores of America with the intention of giving their children the best future. His mother's incredible ability to whip up some of the tastiest dishes with whatever she found available in her kitchen, and/or purchase inexpensively at the supermarket, was his first inspiration and what ultimately drove him to create its world's reknowned pasta fusion for which, The Spaghetti man became well known."
+        },
+        {
+            "name": "Stefano D'Amore",
+            "image": "images/stefano.png",
+            "designation": "Chief Food Officer",
+            "abbr": "CFO",
+            "featured": "false",
+            "description": "Our CFO, Stef, as he is affectionately referred to by his colleagues, comes from a long established family tradition of restauranteurs, well known for their 'sticking it to the customer' approach to the restaurant business. He credits his experiences growing up 'in the family business' for his new found appreciation of organic food sources. Famous four words: anyone that stays, pays!"
+        },
+       
+        {
+            "name": "Luis Suarez",
+            "image": "images/luis.png",
+            "designation": "Executive Chef",
+            "abbr": "EC",
+            "featured": "true",
+            "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world. When he's not busy playing professional football, he enjoys creating mouthwatering Argentinian-Italian fusion experiences.. eventhough he's from Uruguay. But he often says, that to enjoy a good bite, you must be able to put the cuisines from these two craziest cultures together."
+        }
+    ],
+    "feedback": []
+}
