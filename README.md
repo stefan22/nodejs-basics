@@ -13,6 +13,8 @@ Notes:
 
 --------------
 
+Logs:
+
 - [app.js] express server
 - [routes folder] rest routes
 - [public folder] static dir
